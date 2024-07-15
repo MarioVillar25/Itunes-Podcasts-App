@@ -25,8 +25,6 @@ export class PodcastListComponent implements OnInit, OnDestroy {
       return this.podcastService.podcasts;
     }
 
-
-
     //* CONSTRUCTOR:
 
     constructor(private podcastService: PodcastsService) { }
@@ -57,6 +55,13 @@ export class PodcastListComponent implements OnInit, OnDestroy {
       })
 
       this.suscripciones.push(petitionAllPodcasts);
+    }
+
+    //Function to read podcasts by Query
+
+    public readPodcastByQuery(query:string):void{
+
+
 
     }
 
