@@ -1,15 +1,14 @@
-
-
 <div>
   <img
-  src="../../../assets/images/standard.png"
-
+    [src]="podcast?.['im:image']?.[2]?.label ?  podcast?.['im:image']?.[2]?.label :
+  '../../../assets/images/standard.png'
+  "
     alt="img"
   />
-  <h3>This man poodcast</h3>
-  <p>Author: The giorgio wild</p>
+  <h3>{{podcast?.['im:name']?.label}}</h3>
+  <p>Author: {{podcast?.['im:artist']?.label}}</p>
 </div>
-
 
 <!--   [routerLink]="['card-page', card.id]
  -->
+
