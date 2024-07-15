@@ -1,0 +1,15 @@
+/* Tags Styles */
+
+
+input{
+  background-color: var(--gray-soft);
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 0.8rem;
+}
+
+textarea:focus,
+input:focus {
+  outline:none;
+  color: var(--dark-green);
+}

@@ -1,0 +1,41 @@
+/* Tags Styles */
+
+span {
+  color: white;
+  background-color: var(--dark-green);
+  padding: 4px 8px;
+  border-radius: 0.8rem;
+}
+
+section {
+  padding: 0vh 15vw;
+}
+
+/* Classes Styles */
+
+.searchContainer{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cardsContainer{
+  >div{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+}
+
+
+/* Media Queries */
+
+/* @media (width <= 1316px) {
+  nav {
+    padding: 1vh 13vw;
+  }
+}
+
+ */
