@@ -4,12 +4,6 @@
 </section>
 <section class="cardsContainer">
   <div>
-      <app-card></app-card>
-      <app-card></app-card>
-      <app-card></app-card>
-      <app-card></app-card>
-      <app-card></app-card>
-      <app-card></app-card>
-      <app-card></app-card>
+      <app-card [podcast]="podcast" *ngFor="let podcast of podcasts"></app-card>
   </div>
 </section>
