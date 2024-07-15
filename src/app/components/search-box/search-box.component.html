@@ -2,5 +2,7 @@
 <input
 placeholder="Filter podcasts..."
 [(ngModel)]="searchInputValue"
-type="text">
+type="text"
+(keyup)="onKeyPress()"
+>
 

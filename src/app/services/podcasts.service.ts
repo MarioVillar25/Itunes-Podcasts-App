@@ -13,9 +13,6 @@ export class PodcastsService {
   public podcasts: Entry[] = [];
   public baseUrl: string = environment.BASE_URL
 
-
-
-
   //* CONSTRUCTOR:
 
   constructor(private http:HttpClient) { }
@@ -24,8 +21,12 @@ export class PodcastsService {
 
   //* FUNCIONES:
 
+  //Function to create Observable to read All Podcast
+
   public readAllPodcasts(): Observable<PodcastData>{
-   return this.http.get<PodcastData>(this.baseUrl);
+   return this.http.get<PodcastData>(`${this.baseUrl}?name=History`);
   }
+
+
 
 }
