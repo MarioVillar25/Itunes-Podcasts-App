@@ -32,7 +32,7 @@ export class PodcastsService {
 
     //Function to create Observable to read podcast by id
 
-  public readPodcastById(id:string): Observable<EpisodesListData>{
+  public readEpisodesByPodcastId(id:string): Observable<EpisodesListData>{
     return this.http.get<EpisodesListData>(`${this.baseUrlById}${id}&media=podcast&entity=podcastEpisode&limit=${this.limitEpisodes}`);
   }
 
