@@ -1,1 +1,46 @@
-<p>episodes-list works!</p>
+<section>
+  <div class="podcastDescriptionContainer">
+    <div class="podcastDescriptionContainer_img">
+      <img
+      [src]="podcast?.[0]?.['im:image']?.[2]?.label ?  podcast?.[0]?.['im:image']?.[2]?.label :
+    '../../../assets/images/standard.png'
+    "
+      alt="img"
+    />
+    </div>
+    <hr>
+    <div class="podcastDescriptionContainer_header">
+      <h2>{{podcast?.[0]?.['im:name']?.label}}</h2>
+      <h2 class="podcastDescriptionContainer_header--italic">By {{podcast?.[0]?.['im:artist']?.label}}</h2>
+    </div>
+
+    <hr>
+    <h2>Description:</h2>
+    <p>
+      {{podcast?.[0]?.summary?.label}}
+    </p>
+  </div>
+  <div class="episodesContainer">
+    <div class="episodesContainer_count">
+      <p>Episodes: 21</p>
+    </div>
+    <div class="episodesContainer_episodesList">
+      <div class="episodesContainer_episodesList--header">
+        <p >Title</p>
+        <p>Date</p>
+        <p>Duration</p>
+      </div>
+      <hr />
+      <div  *ngFor="let episode of episodes | slice:1; let i = index, let isOdd = odd" [ngClass]="{'oddStyle': isOdd }">
+        <div [routerLink]="['episode', episode.trackId]"  class="episodesContainer_episodesList--body">
+          <p><span>{{episode.trackName}}</span></p>
+          <p>{{episode.releaseDate | date}}</p>
+          <p>{{episode.trackTimeMillis | date:'HH:mm:ss'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
