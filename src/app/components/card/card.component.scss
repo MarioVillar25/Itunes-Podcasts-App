@@ -11,7 +11,10 @@ div{
   align-items: center;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.1s ease-in-out;
   gap: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
 
   h3{
     margin: 0;
@@ -31,4 +34,9 @@ div{
     border-radius: 50%;
     margin-bottom: 5px;
   }
+}
+
+div:hover{
+  border: 2px solid var(--dark-green);
+  transform: scale(1.03);
 }

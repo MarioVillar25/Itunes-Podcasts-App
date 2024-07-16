@@ -30,6 +30,7 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
   //* LIFECYCLE HOOKS
 
   ngOnInit(): void {
+    this.emitDebounceSuscription();
   }
 
   ngOnDestroy(): void {

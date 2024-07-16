@@ -1,9 +1,10 @@
-<section class="searchContainer">
-  <span>100</span>
-  <app-search-box (onDebounce)="readPodcastByQuery($event)"></app-search-box>
-</section>
-<section class="cardsContainer">
-  <div>
-      <app-card [podcast]="podcast" *ngFor="let podcast of podcasts"></app-card>
-  </div>
-</section>
+
+  <section class="searchContainer">
+    <span>{{podcasts.length}}</span>
+    <app-search-box (onDebounce)="readPodcastByQuery($event)"></app-search-box>
+  </section>
+  <section class="cardsContainer">
+    <div *ngIf="podcasts.length > 0">
+        <app-card [podcast]="podcast" *ngFor="let podcast of podcasts"></app-card>
+    </div>
+  </section>
