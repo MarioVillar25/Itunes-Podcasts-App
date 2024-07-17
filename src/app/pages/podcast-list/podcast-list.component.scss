@@ -21,21 +21,51 @@ section {
 }
 
 .cardsContainer{
+
+  margin-top: 6rem;
+
   >div{
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 4rem;
   }
 }
 
 
 /* Media Queries */
 
-/* @media (width <= 1316px) {
-  nav {
-    padding: 1vh 13vw;
+@media (width <= 1562px) {
+
+  section {
+    padding: 0vh 10vw;
   }
 }
 
- */
+@media (width <= 1160px) {
+  section {
+    padding: 0vh 5vw;
+  }
+
+}
+
+@media (width <= 986px) {
+  section {
+    padding: 0vh 5vw;
+  }
+
+}
+
+@media (width <= 800px) {
+  section {
+    padding: 0vh 5vw;
+  }
+
+}
+
+@media (width <= 560px) {
+  section {
+    padding: 0vh 6vw;
+  }
+
+}

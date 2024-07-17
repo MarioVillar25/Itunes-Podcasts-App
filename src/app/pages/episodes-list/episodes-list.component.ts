@@ -24,7 +24,7 @@ export class EpisodesListComponent implements OnInit, OnDestroy {
 
    @Input() public episodes!: Result[];
 
-   public podcastId!: number;
+   public podcastId: string = '';
    public podcast?: Entry[];
 
    //* GETTERS:
@@ -41,8 +41,9 @@ export class EpisodesListComponent implements OnInit, OnDestroy {
 
    public ngOnInit(): void {
     this.readEpisodesByPodcastId();
-    this.readPodcastById(this.podcastId);
-
+    setTimeout(() => {
+      this.readPodcastById();
+    }, 1000);
    }
 
    public ngOnDestroy(): void {
@@ -54,15 +55,12 @@ export class EpisodesListComponent implements OnInit, OnDestroy {
    public readEpisodesByPodcastId(){
    let petitionPodcastById = this.activatedRoute.params
     .pipe(switchMap(({ podcastId }) => {
-    console.log("ID", podcastId);
     return this.podcastsService.readEpisodesByPodcastId(podcastId)
     }))
     .subscribe({
       next: (res) => {
+        this.podcastId = res.results[0].collectionId.toString();
         this.episodes = res.results
-        this.podcastId = res.results[0].collectionId
-        console.log(this.podcastId);
-        console.log(res.results);
       },
       error: (err) => {
         alert('There was a problem at petition: "readPodcastById"')
@@ -72,17 +70,15 @@ export class EpisodesListComponent implements OnInit, OnDestroy {
     this.suscriptions.push(petitionPodcastById);
    }
 
-   public readPodcastById(id:number){
+   public readPodcastById(){
     this.podcastsService.readAllPodcasts().subscribe({
       next: (res) => {
-        let data = res.feed.entry.filter((elem) => elem.id.attributes['im:id'] === this.podcastId.toString());
+        let data = res.feed.entry.filter((elem) => elem.id.attributes['im:id'] === this.podcastId);
         this.podcast = data;
-        console.log(this.podcast);
       },
       error: (err) => {
         alert('There was a problem at petition: "readPodcastById"')
       }
     })
-
    }
 }

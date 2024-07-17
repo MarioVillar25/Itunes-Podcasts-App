@@ -1,16 +1,49 @@
+/* Tags Styles */
+
 nav {
   margin-top: 20px;
   padding: 3vh 15vw;
- }
+}
 
-
-p{
+p {
   font-weight: bold;
   color: var(--dark-green);
   margin: 0;
   margin-bottom: 10px;
 }
 
-hr{
+hr {
   margin: 0;
+}
+
+/* Media Queries */
+
+@media (width <= 1562px) {
+  nav {
+    padding: 3vh 10vw;
+  }
+}
+
+@media (width <= 1160px) {
+  nav {
+    padding: 3vh 5vw;
+  }
+}
+
+@media (width <= 986px) {
+  nav {
+    padding: 3vh 5vw;
+  }
+}
+
+@media (width <= 800px) {
+  nav {
+    padding: 3vh 5vw;
+  }
+}
+
+@media (width <= 560px) {
+  nav {
+    padding: 3vh 6vw;
+  }
 }

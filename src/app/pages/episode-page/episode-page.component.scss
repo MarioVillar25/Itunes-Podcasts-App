@@ -87,3 +87,83 @@ section {
   }
 
 }
+
+
+/* Media Queries */
+
+@media (width <= 1562px) {
+  section {
+    padding: 0vh 10vw;
+  }
+
+  .episodeContainer{
+    width: 30%;
+  }
+
+  .descriptionContainer{
+    width: 70%;
+  }
+
+}
+
+@media (width <= 1160px) {
+  section {
+    padding: 0vh 5vw;
+  }
+  .episodeContainer{
+    width: 40%;
+  }
+
+  .descriptionContainer{
+    width: 60%;
+  }
+
+}
+
+@media (width <= 986px) {
+  section {
+    padding: 0vh 5vw;
+    padding-bottom: 5vh;
+  }
+}
+
+@media (width <= 800px) {
+  section {
+    padding: 0vh 5vw;
+    padding-bottom: 5vh;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+  .episodeContainer{
+    width: 70%;
+    padding: 30px;
+  }
+  .descriptionContainer{
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+@media (width <= 560px) {
+  section {
+    padding: 0vh 6vw;
+  }
+  .episodeContainer{
+    width: 100%;
+    padding: 30px;
+  }
+  .descriptionContainer{
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+@media (width <= 395px) {
+  .descriptionContainer{
+    audio{
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+}
