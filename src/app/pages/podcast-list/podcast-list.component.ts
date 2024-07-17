@@ -32,7 +32,12 @@ export class PodcastListComponent implements OnInit, OnDestroy {
   //* LIFECYCLE HOOKS
 
   ngOnInit(): void {
-    this.readAllPodcasts();
+    this.podcastService.loadingState = true;
+
+    setTimeout(() => {
+      this.readAllPodcasts();
+    }, 300)
+
   }
 
   ngOnDestroy(): void {
@@ -47,6 +52,7 @@ export class PodcastListComponent implements OnInit, OnDestroy {
     let petitionAllPodcasts = this.podcastService.readAllPodcasts().subscribe({
       next: (res) => {
         this.podcastService.podcasts = res.feed.entry;
+        this.podcastService.loadingState = false;
       },
       error: (err) => {
         alert('There was an error at petition: readAllPodcasts');

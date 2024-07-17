@@ -12,73 +12,82 @@ import { Result } from '../../interfaces/episodesListData.interface';
   standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './episodes-list.component.html',
-  styleUrl: './episodes-list.component.scss'
+  styleUrl: './episodes-list.component.scss',
 })
 export class EpisodesListComponent implements OnInit, OnDestroy {
+  //* VARIABLES:
 
-   //* VARIABLES:
+  public suscriptions: Subscription[] = [];
 
-   public suscriptions: Subscription[] = []
+  @Input() public episodes!: Result[];
 
+  public podcastId: string = '';
+  public podcast?: Entry[];
+  public state: boolean = false;
 
+  //* GETTERS:
 
-   @Input() public episodes!: Result[];
+  get podcasts() {
+    return this.podcastsService.podcasts;
+  }
 
-   public podcastId: string = '';
-   public podcast?: Entry[];
+  //* CONSTRUCTOR:
 
-   //* GETTERS:
-
-   //* CONSTRUCTOR:
-
-   constructor(
+  constructor(
     private podcastsService: PodcastsService,
-    private activatedRoute: ActivatedRoute,
-   ) { }
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-   //* LIFECYCLE HOOKS
+  //* LIFECYCLE HOOKS
 
+  public ngOnInit(): void {
+    this.podcastsService.loadingState = true;
 
-   public ngOnInit(): void {
     this.readEpisodesByPodcastId();
     setTimeout(() => {
       this.readPodcastById();
+      this.state= true;
+      this.podcastsService.loadingState = false;
     }, 1000);
-   }
+  }
 
-   public ngOnDestroy(): void {
-    unsubscribePetition(this.suscriptions)
-   }
+  public ngOnDestroy(): void {
+    unsubscribePetition(this.suscriptions);
+  }
 
-   //* FUNCTIONS:
+  //* FUNCTIONS:
 
-   public readEpisodesByPodcastId(){
-   let petitionPodcastById = this.activatedRoute.params
-    .pipe(switchMap(({ podcastId }) => {
-    return this.podcastsService.readEpisodesByPodcastId(podcastId)
-    }))
-    .subscribe({
-      next: (res) => {
-        this.podcastId = res.results[0].collectionId.toString();
-        this.episodes = res.results
-      },
-      error: (err) => {
-        alert('There was a problem at petition: "readPodcastById"')
-      }
-    })
+  public readEpisodesByPodcastId() {
+    let petitionPodcastById = this.activatedRoute.params
+      .pipe(
+        switchMap(({ podcastId }) => {
+          return this.podcastsService.readEpisodesByPodcastId(podcastId);
+        })
+      )
+      .subscribe({
+        next: (res) => {
+          this.podcastId = res.results[0].collectionId.toString();
+          this.episodes = res.results;
+        },
+        error: (err) => {
+          alert('There was a problem at petition: "readPodcastById"');
+        },
+      });
 
     this.suscriptions.push(petitionPodcastById);
-   }
+  }
 
-   public readPodcastById(){
+  public readPodcastById() {
     this.podcastsService.readAllPodcasts().subscribe({
       next: (res) => {
-        let data = res.feed.entry.filter((elem) => elem.id.attributes['im:id'] === this.podcastId);
+        let data = res.feed.entry.filter(
+          (elem) => elem.id.attributes['im:id'] === this.podcastId
+        );
         this.podcast = data;
       },
       error: (err) => {
-        alert('There was a problem at petition: "readPodcastById"')
-      }
-    })
-   }
+        alert('There was a problem at petition: "readPodcastById"');
+      },
+    });
+  }
 }
