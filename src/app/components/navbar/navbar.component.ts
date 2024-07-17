@@ -11,17 +11,14 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
 
-
   //* GETTERS:
 
   get loadingState() {
     return this.podcastsService.loadingState;
   }
 
-
   //* CONSTRUCTOR:
 
   constructor(private podcastsService: PodcastsService) {}
-
 
 }

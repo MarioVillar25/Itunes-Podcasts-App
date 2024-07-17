@@ -22,7 +22,6 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
   public searchSubject: Subject<string> = new Subject<string>();
   public suscriptions: Subscription[] = [];
 
-
   //* CONSTRUCTOR:
 
   constructor(private podcastService: PodcastsService){}
@@ -37,8 +36,6 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     unsubscribePetition(this.suscriptions);
   }
 
-
-
   //* FUNCIONES:
 
   //Function to send the value from the input to debounce function
@@ -46,6 +43,8 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
   public onKeyPress():void {
     this.searchSubject.next(this.searchInputValue)
   }
+
+  //Function to subscribe to debounce Function
 
   public emitDebounceSuscription(): void{
     let debouncerSuscription = this.searchSubject
@@ -61,12 +60,4 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
 
     this.suscriptions.push(debouncerSuscription);
   }
-
-
-
-
-
-
-
-
 }

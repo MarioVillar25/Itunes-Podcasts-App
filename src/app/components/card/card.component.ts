@@ -16,19 +16,4 @@ export class CardComponent {
 
   @Input() public podcast!: Entry;
 
-
-  //* GETTERS:
-
-  //* CONSTRUCTOR:
-
-  constructor() { }
-
-  //* LIFECYCLE HOOKS
-
-  //* FUNCTIONS:
-
-
-
-
-
 }

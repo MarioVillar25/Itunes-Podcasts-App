@@ -17,10 +17,9 @@ import { Result } from '../../interfaces/episodesListData.interface';
 export class EpisodesListComponent implements OnInit, OnDestroy {
   //* VARIABLES:
 
-  public suscriptions: Subscription[] = [];
-
   @Input() public episodes!: Result[];
 
+  public suscriptions: Subscription[] = [];
   public podcastId: string = '';
   public podcast?: Entry[];
   public state: boolean = false;
@@ -42,8 +41,8 @@ export class EpisodesListComponent implements OnInit, OnDestroy {
 
   public ngOnInit(): void {
     this.podcastsService.loadingState = true;
-
     this.readEpisodesByPodcastId();
+
     setTimeout(() => {
       this.readPodcastById();
       this.state= true;
@@ -56,6 +55,8 @@ export class EpisodesListComponent implements OnInit, OnDestroy {
   }
 
   //* FUNCTIONS:
+
+  //Function to read Episodes by podcast Id
 
   public readEpisodesByPodcastId() {
     let petitionPodcastById = this.activatedRoute.params
@@ -76,6 +77,8 @@ export class EpisodesListComponent implements OnInit, OnDestroy {
 
     this.suscriptions.push(petitionPodcastById);
   }
+
+  //Function to read podcast by Id
 
   public readPodcastById() {
     this.podcastsService.readAllPodcasts().subscribe({
