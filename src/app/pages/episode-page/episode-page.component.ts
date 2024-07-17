@@ -60,9 +60,6 @@ export class EpisodePageComponent implements OnInit, OnDestroy {
         let data = res.results.filter((elem) => elem.trackId.toString() === this.episodeId)
          this.episode = data[0]
          this.artist = res.results[0].artistName;
-
-         console.log(this.episode);
-
        },
        error: (err) => {
          alert('There was a problem at petition: "readEpisodeByPodcastId"')

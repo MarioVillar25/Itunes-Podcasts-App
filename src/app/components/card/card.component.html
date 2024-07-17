@@ -1,12 +1,15 @@
-<div  [routerLink]="['podcast', podcast.id.attributes['im:id']]" >
-  <img
-    [src]="podcast['im:image'][2].label ?  podcast['im:image'][2].label :
-  '../../../assets/images/standard.png'
-  "
-    alt="img"
-  />
-  <h3>{{podcast['im:name'].label}}</h3>
-  <p>Author: {{podcast['im:artist'].label}}</p>
+<div class="cardContainer"  [routerLink]="['podcast', podcast.id.attributes['im:id']]" >
+
+    <img
+      [src]="podcast['im:image'][2].label ?  podcast['im:image'][2].label :
+    '../../../assets/images/standard.png'
+    "
+      alt="img"
+    />
+    <div>
+    <h3>{{podcast['im:name'].label | uppercase}}</h3>
+    <p>Author: {{podcast['im:artist'].label}}</p>
+  </div>
 </div>
 
 
