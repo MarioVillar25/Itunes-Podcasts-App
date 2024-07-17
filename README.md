@@ -1,10 +1,10 @@
 # Itunes Podcast App
 
-This project is an application developed in Angular 17 that provides a list of Itunes podcast. The application displays top 100 podcasts cards on the main page. Each card allows access to detailed information about the podcast, including the episodes that belong to the program.
+This project is an application developed in Angular 17 that provides a list of Itunes podcasts. The application displays top 100 podcasts cards on the main page. Each card allows access to detailed information about the podcast, including the episodes that belong to the program.
 
 ## Features
 
-- **Landing Page**: Displays 100 podcast cards with basic information.
+- **Landing Page**: Displays 100 podcasts cards with basic information.
 - **Detailed Information**: Clicking on a card provides detailed information about the podcast and related episodes.
 - **Modular Structure**: The application is organized into folders to facilitate maintenance and scalability.
 
@@ -44,4 +44,36 @@ To clone and run this application, follow these steps:
 To run the application in a development environment, use the following command:
 ```bash
 ng serve
+```
+
+## Contributing
+
+I accept different types of contributions, including some that don't require you to write a single line of code. For detailed instructions on how to get started with my project, see "[About contributing to GitHub Docs](https://docs.github.com/en/contributing/collaborating-on-github-docs/about-contributing-to-github-docs)."
+
+
+## License
+
+Copyright (c) 2017 Lob.com
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 
