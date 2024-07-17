@@ -13,18 +13,17 @@ section {
 
 /* Classes Styles */
 
-.searchContainer{
+.searchContainer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
 }
 
-.cardsContainer{
-
+.cardsContainer {
   margin-top: 6rem;
 
-  >div{
+  > div {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -32,11 +31,9 @@ section {
   }
 }
 
-
 /* Media Queries */
 
 @media (width <= 1562px) {
-
   section {
     padding: 0vh 10vw;
   }
@@ -46,26 +43,22 @@ section {
   section {
     padding: 0vh 5vw;
   }
-
 }
 
 @media (width <= 986px) {
   section {
     padding: 0vh 5vw;
   }
-
 }
 
 @media (width <= 800px) {
   section {
     padding: 0vh 5vw;
   }
-
 }
 
 @media (width <= 560px) {
   section {
     padding: 0vh 6vw;
   }
-
 }

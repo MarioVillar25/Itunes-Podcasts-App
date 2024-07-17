@@ -31,16 +31,15 @@ export class PodcastListComponent implements OnInit, OnDestroy {
 
   //* LIFECYCLE HOOKS
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.podcastService.loadingState = true;
 
     setTimeout(() => {
       this.readAllPodcasts();
-    }, 300)
-
+    }, 300);
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     unsubscribePetition(this.suscripciones);
   }
 

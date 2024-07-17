@@ -22,9 +22,6 @@ export class EpisodePageComponent implements OnInit, OnDestroy {
   public episode!: Result;
   public artist :string | undefined;
 
-
-  //* GETTERS:
-
   //* CONSTRUCTOR:
 
   constructor(
@@ -40,12 +37,12 @@ export class EpisodePageComponent implements OnInit, OnDestroy {
       this.readOneEpisode();
     }, 300)
   }
+
   public ngOnDestroy(): void {
     unsubscribePetition(this.suscriptions);
   }
 
   //* FUNCTIONS:
-
 
   //Function to read Episode by Podcast ID
 

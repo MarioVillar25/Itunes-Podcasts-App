@@ -1,35 +1,47 @@
-# PodcastApp
+# Itunes Podcast App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+This project is an application developed in Angular 17 that provides a list of Itunes podcast. The application displays top 100 podcasts cards on the main page. Each card allows access to detailed information about the podcast, including the episodes that belong to the program.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Landing Page**: Displays 100 podcast cards with basic information.
+- **Detailed Information**: Clicking on a card provides detailed information about the podcast and related episodes.
+- **Modular Structure**: The application is organized into folders to facilitate maintenance and scalability.
 
-## Code scaffolding
+## Folder Structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project folder structure is as follows:
 
-## Build
+- `src/app`
+  - `pages/` : Contains the main pages of the application.
+  - `components/` : Contains reusable components.
+  - `layout/` : Contains components related to the application's layout (e.g., header, footer).
+  - `services/` : Contains the application's services to handle business logic and API calls.
+  - `utils/` : Contains utilities and helper functions.
+  - `environments/` : Contains configuration files for different environments (e.g., development, production).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+To clone and run this application, follow these steps:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone this repository into a folder where you want to save the project:
+    ```bash
+    git clone https://gitlab.com/mario.villar/prueba-angular-podcast.git
+    ```
 
-## Running end-to-end tests
+2. Navigate to the project directory:
+    ```bash
+    cd projectFolderName
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Install the project dependencies:
+    ```bash
+    npm install
+    ```
 
-test feature
+## Usage
 
-## Further help
+To run the application in a development environment, use the following command:
+```bash
+ng serve
 
-test
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-another test feature
-
-test test more test

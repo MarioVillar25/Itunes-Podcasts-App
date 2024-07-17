@@ -1,33 +1,20 @@
+<ng-container *ngIf="podcasts.length > 0; else loadingPodcasts">
+  <section class="searchContainer">
+    <span>{{ podcasts.length }}</span>
+    <app-search-box (onDebounce)="readPodcastByQuery($event)"></app-search-box>
+  </section>
+  <section class="cardsContainer">
+    <div *ngIf="podcasts.length > 0">
+      <app-card [podcast]="podcast" *ngFor="let podcast of podcasts"></app-card>
+    </div>
+  </section>
+</ng-container>
 
-
-
-
-  <ng-container *ngIf="podcasts.length > 0; else loadingPodcasts">
-    <section class="searchContainer">
-      <span>{{podcasts.length}}</span>
-      <app-search-box (onDebounce)="readPodcastByQuery($event)"></app-search-box>
-    </section>
-    <section class="cardsContainer">
-      <div *ngIf="podcasts.length > 0">
-          <app-card [podcast]="podcast" *ngFor="let podcast of podcasts"></app-card>
-      </div>
-    </section>
-  </ng-container>
-
-
-
-
-
-  <ng-template #loadingPodcasts>
-    <section>
-      <div class="loadingContainer">
-        <img src="../../../assets/icons/loading.svg" alt="" />
-        <h1>Loading Podcasts...</h1>
-      </div>
-    </section>
-  </ng-template>
-
-
-
-
-
+<ng-template #loadingPodcasts>
+  <section>
+    <div class="loadingContainer">
+      <img src="../../../assets/icons/loading.svg" alt="" />
+      <h1>Loading Podcasts...</h1>
+    </div>
+  </section>
+</ng-template>
