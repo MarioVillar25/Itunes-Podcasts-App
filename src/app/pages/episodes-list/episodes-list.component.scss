@@ -12,6 +12,11 @@ section {
 
 /* Classes Styles */
 
+.loadingSection{
+  display: flex;
+  justify-content: center;
+}
+
 .podcastDescriptionContainer {
   width: 30%;
   display: flex;

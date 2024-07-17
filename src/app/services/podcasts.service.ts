@@ -15,6 +15,7 @@ export class PodcastsService {
   public baseUrl: string = environment.BASE_URL;
   public baseUrlById: string = environment.BASE_ID_URL;
   public limitEpisodes: number = 20;
+  public loadingState: boolean = false;
 
   //* CONSTRUCTOR:
 

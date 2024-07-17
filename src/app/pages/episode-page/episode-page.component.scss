@@ -12,6 +12,11 @@ section {
 
 /* Classes Styles */
 
+.loadingSection{
+  display: flex;
+  justify-content: center;
+}
+
 .episodeContainer{
   width: 20%;
   display: flex;
@@ -29,8 +34,8 @@ section {
 
 
   img{
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: 100%;
     border-radius: 3px;
     object-fit: cover;
     object-position: center;

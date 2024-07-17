@@ -4,11 +4,12 @@ import { PodcastsService } from '../../services/podcasts.service';
 import { Subscription, switchMap } from 'rxjs';
 import { Result } from '../../interfaces/episodesListData.interface';
 import { unsubscribePetition } from '../../utils/utils';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-episode-page',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './episode-page.component.html',
   styleUrl: './episode-page.component.scss'
 })
@@ -34,7 +35,10 @@ export class EpisodePageComponent implements OnInit, OnDestroy {
   //* LIFECYCLE HOOKS
 
   public ngOnInit(): void {
-    this.readOneEpisode();
+    this.podcastsService.loadingState = true;
+    setTimeout(() => {
+      this.readOneEpisode();
+    }, 300)
   }
   public ngOnDestroy(): void {
     unsubscribePetition(this.suscriptions);
@@ -60,6 +64,7 @@ export class EpisodePageComponent implements OnInit, OnDestroy {
         let data = res.results.filter((elem) => elem.trackId.toString() === this.episodeId)
          this.episode = data[0]
          this.artist = res.results[0].artistName;
+         this.podcastsService.loadingState = false;
        },
        error: (err) => {
          alert('There was a problem at petition: "readEpisodeByPodcastId"')
